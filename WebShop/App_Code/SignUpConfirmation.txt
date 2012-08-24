@@ -1,0 +1,25 @@
+﻿Hi <%UserName %>
+
+Thank you for signing upfor a new account at www.secondhandbookshop.com
+Here are your login details
+
+User Name : <%UserName%>
+
+Your Password ; <%PassWord%>
+
+We hope you succedd with your shop and if  are just buying we hope you  get some good deals.
+
+Regards
+www.secondhandbookshop.com
+
+//For Use
+<asp:TemplateField HeaderText="PictureURL" SortExpression="PictureURL">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("PictureURL") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("PictureURL", "~/ProductImages/thumb_{0}") %>'/>
+                </ItemTemplate>
+            </asp:TemplateField>
+            
+            // for use later
