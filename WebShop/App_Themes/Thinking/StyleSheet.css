@@ -1,0 +1,66 @@
+﻿body 
+{
+
+}
+div.container
+{
+	width: 100%;
+	margin: 0px;
+	border: 1px #3399FF ;
+	line-height: 150%;
+	
+}
+div.header,div.footer
+{
+padding:0.5em;
+color:white;
+background-color:#3399FF ;
+background-image: url(Images/booksForWeb.jpg);
+background-repeat:repeat-x ;
+clear:left;
+}
+h1.header
+{
+padding:0;
+margin:0;
+}
+div.left
+{
+float:left;
+width:180px;
+margin:0;
+padding:1em;
+}
+div.content
+{
+margin-left:190px;
+margin-right:190px;
+border-left:1px  #3399FF;
+border-right:1px #3399FF ;
+
+padding:1em;
+}
+div.right
+{
+	float: right;
+	width: 200px;
+	margin: 0;
+	padding: 1em; 
+	 
+}
+ a
+{
+	/*
+		Clears the underline on normal links, and give them #da6637 as the color.
+	*/
+	color: #da6637;
+	text-decoration: none;
+}
+
+a:hover
+{
+	/*
+		Underlines links when the users hover the mouse over them.
+	*/
+	text-decoration: underline;
+}
