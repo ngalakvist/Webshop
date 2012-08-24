@@ -1,0 +1,227 @@
+﻿ body
+{
+	/* 
+		Clears white space around the body except for the top which gets 10 pixels.
+	*/
+	margin: 0 0 0 0;
+	  
+ font: 90%/1.5em  Verdana, Tahoma, Arial,sans-serif;
+	color: #333; 
+	
+}
+*
+{
+  font-family: Arial;
+	margin-right: 0px;
+}
+h1, h2, h3 {
+	font-family: 'Trebuchet MS', Tahoma, Verdana, Sans-serif;
+	font-weight: Bold; 		
+}
+h1 {
+	font-size: 145%;	
+	padding: 10px 10px 5px 10px;
+	color: #75A54B;
+	background-color: inherit;
+	border-bottom: 1px solid #EFF0F1;		
+}
+h2 {
+	font-size: 125%;
+	padding: 10px 10px 5px 10px;
+	color: #75A54B;
+	background-color: inherit;
+	border-bottom: 1px solid #EFF0F1
+}
+h3 {
+	font-size: 125%;	
+	color: #404040;
+}
+
+h2, h3, p {
+	padding: 10px;		
+	margin: 0;
+}
+ 
+
+.Introduction
+{
+  font-style: italic;
+  color: #003399;
+}
+
+#PageWrapper
+{
+  width: 900px;
+  MARGIN-LEFT: auto; 
+  MARGIN-RIGHT: auto; 
+}
+#Header
+{
+	/*
+		Gives the header the same width as the PageWrapper. The height creates some room for the logo.	*/
+	background :url(hImage.png) repeat-x; 
+	height: 70px;
+	color: #808080; 
+	margin: 0; padding: 0;
+		 width: 900px;
+ 
+ 
+  		
+}
+#Header h1#logo {
+	position: absolute;	
+	font: bold 3.9em "trebuchet MS", Arial, Tahoma, Sans-Serif;
+	margin: 0; padding:0;
+	color: #75A54B;
+	letter-spacing: -2px;	
+	border: none;	
+	 background :url(logo.gif);	
+	/* change the values of top and Left to adjust the position of the logo*/
+	top: 0; left: 2px;		
+}
+  #logo {
+	position: absolute;	
+	margin: 0; padding:0;
+	color: #75A54B;
+	border: none;	
+	 background :url(logo.gif);	
+	/* change the values of top and Left to adjust the position of the logo*/
+	top: 0; left: 2px; 
+	width: 227px;
+    height: 30px;
+			
+}
+#Header h1#logo span { color: #F18359; }
+ 
+#Header h2#slogan { 
+	position: absolute;
+	margin: 0; padding: 0;	
+	font: bold 12px Arial, Tahoma, Sans-Serif;	
+	text-transform: none;
+	color:Black;
+	
+	/* change the values of top and Left to adjust the position of the slogan*/
+	top:  53px; left: 45px;
+}
+  
+#booksImage
+{
+	text-align:right;
+	
+
+}
+#breadCrumb
+{
+	width: 550px; 
+}
+#Menu 
+{
+	 width:878px;
+	padding-top: 10px;
+	float: left;
+	padding: 10px;
+	height: 60px;
+	background: #FFF url(bg.gif) repeat-x;	
+	text-align:center
+
+}
+#loginBox
+{
+    
+   padding: 2px 2px 2px 2px;    
+   font-size: 10px;
+}
+#SidebarLeft
+{
+	/*
+		The SideBar is positioned absolutely in the top-right corner of the page (yet still within PageWrapper).
+		It has the same font-size and color as #MainContent
+	*/
+	border: thin solid #F18359;
+	font-size: 0.8em;
+	background-repeat: no-repeat;
+	width: 155px;
+	min-height: 500px;
+	padding-top: 10px;
+	padding-left: 10px;
+	float: left;
+}
+
+#MainContent
+{
+	/*
+		Defines he main content area. The text color is white (on the gray background set on the body).
+		The #MainContent element has a minimum height of 500 pixels, but can grow if necessary.
+		The font-size is 80% of its parenty element, which in this case comes down to 80% of the font
+		the user has specified as the default font in the browser.
+	*/ 
+	font-size: 0.8em;
+	width: 530px;
+	min-height: 500px;
+	padding:2px;
+	padding-top: 0;
+	float: left;
+	background-color: White;
+}
+
+#SidebarRight
+{
+	/*
+		The SideBar is positioned absolutely in the top-right corner of the page (yet still within PageWrapper).
+		It has the same font-size and color as #MainContent
+	*/
+	font-size: 0.8em;
+  	width:175px;
+	min-height: 500px;
+	padding-top: 10px;
+	padding-left: 10px;
+	float: left;
+ border: thin solid #F18359;
+
+}
+
+#Footer
+{
+	/*
+		The footer is positioned below all other content (yet still within PageWrapper).
+		At the top, it gets a border with a dashed style, while all other sides have no border.
+	*/
+	clear: both;
+	text-align: center;
+ 
+	height: 37px;
+	 width: 880px;
+	float: left;
+	padding: 10px;
+	height: 60px;
+	background: #FFF url(bg.gif) repeat-x;
+	 
+}
+ 
+#MainContent a
+{
+  color: #008000;
+  text-decoration: underline;
+}
+
+#MainContent a:visited
+{
+  color: #FF0000;
+  text-decoration: underline;
+}
+
+#MainContent a:hover
+{
+  color: #FFA500;
+  text-decoration: underline;
+}
+#SiteMap
+{
+	 
+	height: 20px;
+	background-color: #FFCC66;
+	padding-left :500px
+	 
+}
+
+ 

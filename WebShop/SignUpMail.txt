@@ -1,0 +1,13 @@
+﻿Hi <%UserName %>
+
+Thank you for signing upfor a new account at www.secondhandbookshop.com
+Here are your login details
+
+User Name : <%UserName%>
+
+Your Password ; <%PassWord%>
+
+ 
+Regards
+www.secondhandbookshop.com
+- The MangoWave Team
