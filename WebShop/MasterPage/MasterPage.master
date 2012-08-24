@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Src="../Controls/ShoppingCartBox.ascx" TagName="ShoppingCartBox" TagPrefix="uc1" %>
+<%@ Register Src="../Controls/Search.ascx" TagName="Search" TagPrefix="uc2" %>
+<%@ Register src="../Controls/BookSlideShowl.ascx" tagname="BookSlideShowl" tagprefix="uc3" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Second Hand Bookshop</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../StyleSheets/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        function AdjustColumnsHeight() {
+            // get a reference to the three DIVS that make up the columns
+            var centerCol = window.document.getElementById('MainContent');
+            var leftCol = window.document.getElementById('SidebarLeft');
+            var rightCol = window.document.getElementById('SidebarRight');
+            // calculate the max height
+            var hCenterCol = centerCol.offsetHeight;
+            var hLeftCol = leftCol.offsetHeight;
+            var hRightCol = rightCol.offsetHeight;
+            var maxHeight = Math.max(hCenterCol, Math.max(hLeftCol, hRightCol));
+            // set the height of all 3 DIVS to the max height
+            centerCol.style.height = maxHeight + 'px';
+            leftCol.style.height = maxHeight + 'px';
+            rightCol.style.height = maxHeight + 'px';
+            // Show the footer
+            window.document.getElementById('Footer').style.visibility = 'inherit';
+        }
+        window.onload = function() { AdjustColumnsHeight(); }
+        /* ]]> */       
+    </script>
+
+    <style type="text/css">
+        .style1
+        {
+            width: 227px;
+            height: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="PageWrapper">
+        <div id="Header">
+             <div id="logo"> </div>
+             </div>
+        <div id="Menu">
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" ShowStartingNode="false" runat="server" />
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal"
+                StaticSubMenuIndent="24px" Height="16px" Width="691px">
+                <StaticSelectedStyle ItemSpacing="10px" />
+            </asp:Menu>
+            <div style="text-align: right">
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                <asp:LoginName ID="LoginName1" runat="server" FormatString="Logged in as {0}" />
+            </div>
+        </div>
+        <div id="SidebarLeft">
+            <div>
+                <h2>
+                    Search Shop
+                </h2>
+                <uc2:Search ID="Search1" runat="server" />
+                 
+            </div>
+           
+             <h2>
+                   Categories
+                </h2>
+            <asp:DataList ID="DataList1" runat="server" CellPadding="4" 
+                DataSourceID="LinqDataSource1" ForeColor="#333333">
+                <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                <AlternatingItemStyle BackColor="White" />
+                <ItemStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                <HeaderStyle BackColor="#990000" Font-Size="Small" Font-Bold="True" ForeColor="Black" />
+                <ItemTemplate>
+                 <asp:HyperLink ID="catLink" runat="server" Text='<%# Eval("Name") %>'  
+                            NavigateUrl='<%#Eval("CategoryId","~/Default.aspx?CatgryId={0}") %>' 
+                          Font-Size="Small" BorderColor="Black" ForeColor="Black" />
+                          <br />
+                </ItemTemplate>
+            </asp:DataList>      
+            <asp:LinqDataSource ID="LinqDataSource1" runat="server" 
+                ContextTypeName="BooksDataContext" Select="new (Name, CategoryId)" 
+                TableName="ProductCategories">
+            </asp:LinqDataSource>
+        </div>
+        <div id="MainContent">
+            <div id="breadCrumb">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                </asp:SiteMapPath>
+            </div>
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="SidebarRight">
+            <h2>
+                Shopping Cart</h2>
+            <uc1:ShoppingCartBox ID="ShoppingCartBox1" runat="server" />
+            <br />
+            <h2>
+                Latest books</h2>
+            <uc3:BookSlideShowl ID="BookSlideShowl1" runat="server" />
+
+        </div>
+        <div id="Footer">
+            <div>
+                Copyright © Ngala Talla, 2010 | Design by MangoWave</div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterSecBooks.master.cs" Inherits="MasterSecBooks" %>
+ 
+<%@ Register src="../Controls/ShoppingCartBox.ascx" tagname="ShoppingCartBox" tagprefix="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Test for second hand books</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+  
+ 
+  
+ </head>
+<body style="padding: 50 50 50 50" >
+    <form id="form1" runat="server">		
+	<div id="header">
+
+      		
+		<h1 id="logo">Second<span>HandBooks</span></h1> 
+         <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+        </div>
+		<div style="background-color:Ivory; text-align:left"> 
+            <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Default.aspx" runat="server">Home</asp:HyperLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink2" NavigateUrl="~/BookShoppingCartPage.aspx"  runat="server">Shopping Cart</asp:HyperLink>
+            <br />
+            <br />
+            <br />
+
+    </div>						
+	  <div> 
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <br />
+    <br />
+		</div>
+		<div id="Div1">
+			&copy; Copyright 2010 <strong>Mangofly</strong>&nbsp;	 
+			Design by: <a href="http://ntasoftware.blogspot.com/">ntasoftware</a> | 
+	 </div>
+		 
+    </form>
+</body>
+</html>
